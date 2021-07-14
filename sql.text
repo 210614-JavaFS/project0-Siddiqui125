@@ -1,0 +1,29 @@
+DROP TABLE CUSTOMER ;
+
+CREATE TABLE CUSTOMER (
+	username varchar(50) NOT NULL ,
+	user_pass varchar(50) NOT NULL , 
+	customer_id SERIAL  PRIMARY KEY,
+	first_name varchar(50),
+	last_name varchar(50),
+	address varchar(50),
+	city varchar(50),
+	state varchar(50),
+	zipcode varchar(50),
+	customer_ssn varchar(50),
+	phonenumber varchar(50),
+	email varchar(50)
+	);
+ALTER TABLE CUSTOMER DROP customer_id;
+ALTER TABLE CUSTOMER ADD customer_id serial PRIMARY KEY;
+ALTER TABLE customer ADD IsEmployee boolean ;
+
+SELECT account_status, current_balance, account_type, account_number, customerid, account_id
+FROM account;
+ALTER TABLE account DROP customerid
+ALTER TABLE account DROP account_id
+ALTER TABLE account ADD customer_id serial NOT NULL PRIMARY KEY 
+ALTER TABLE account DROP customer_id
+ALTER TABLE account ADD account_id serial NOT NULL PRIMARY KEY 
+ALTER TABLE ACCOUNT ADD customer_id INTEGER  
+
